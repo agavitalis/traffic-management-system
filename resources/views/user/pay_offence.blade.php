@@ -50,8 +50,8 @@
                       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Pay with Credit Cards</a>
                         </li>
-                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Pay by Bank </a>
-                        </li>
+                        <!-- <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Pay by Bank </a>
+                        </li> -->
                        
                       </ul>
                       <div id="myTabContent" class="tab-content">
@@ -116,7 +116,7 @@
                             </div>
 
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                        <!-- <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                           
                              <div class="x_content">
                                 <br/>
@@ -175,7 +175,7 @@
                             </div>
 
 
-                        </div>
+                        </div> -->
                        
                       </div>
                     </div>

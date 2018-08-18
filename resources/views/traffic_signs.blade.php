@@ -123,39 +123,7 @@
 					</div>
 				</div>
 				@endforeach
-				<div class="col-sm-3 gallery-grid wow fadeInUp animated" data-wow-delay=".5s">
-					<div class="grid">
-						<figure class="effect-apollo">
-							<a class="example-image-link" href="images/m8.jpg" data-lightbox="example-set" data-title="">
-								<img src="images/m8.jpg" alt="" class="img-fluid" />
-							</a>
-							<figcaption>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<div class="col-sm-3 gallery-grid wow fadeInUp animated" data-wow-delay=".5s">
-					<div class="grid">
-						<figure class="effect-apollo">
-							<a class="example-image-link" href="images/m3.jpg" data-lightbox="example-set" data-title="">
-								<img src="images/m3.jpg" alt="" class="img-fluid" />
-							</a>
-							<figcaption>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<div class="col-sm-3 gallery-grid wow fadeInUp animated" data-wow-delay=".5s">
-					<div class="grid">
-						<figure class="effect-apollo">
-							<a class="example-image-link" href="images/m3.jpg" data-lightbox="example-set" data-title="">
-								<img src="images/m3.jpg" alt="" class="img-fluid" />
-							</a>
-							<figcaption>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
+				
 			</div>
 
 		</div>

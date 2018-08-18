@@ -35,6 +35,10 @@ Route::match(['get','post'],'/admin_manage_payments/{id?}', 'OffendersController
 Route::match(['get','post'],'/admin_new_message/{id?}', 'OffendersController@new_message')->name('admin_new_message');
 Route::match(['get','post'],'/admin_manage_message/{id?}', 'OffendersController@manage_message')->name('admin_manage_message');
 
+Route::match(['get','post'],'/admin_new_emblem/{id?}', 'EmblemController@add_emblem')->name('admin_new_emblem');
+Route::match(['get','post'],'/admin_manage_emblem/{id?}', 'EmblemController@manage_emblem')->name('admin_manage_emblem');
+Route::get('/admin_view_purchases/{id?}', 'EmblemController@view_purchases')->name('admin_view_purchases');
+
 
 //User routes begins here
 Route::get('/user_index', 'UserController@index')->name('user.index');
@@ -50,4 +54,7 @@ Route::match(['get','post'],'/edit_profile', 'UserController@edit_profile')->nam
 //transaction  controller beginds
 Route::match(['get','post'],'/make_payment', 'PaymentController@payments')->name('make_payment');
 Route::get('/get_receipt/{id?}', 'PaymentController@receipt')->name('get_receipt');
-Route::match(['get','post'],'/print_receipts', 'PaymentController@print_receipts')->name('print_receipts');
+
+//buy eblem starts
+Route::match(['get','post'],'/buy_emblems', 'TransactionController@buy_emblem')->name('buy_emblem');
+Route::get('/emblem_receipt/{id?}', 'TransactionController@emblem_receipt')->name('emblem_receipt');

@@ -104,8 +104,7 @@ class AdminController extends Controller
         {
              //validate this input
             $validatedData = $request->validate([
-                'first_name'=>'required',
-                'last_name'=>'required',
+                'username'=>'required',
                 'email'=>'required'
             ]);
             //update organization details

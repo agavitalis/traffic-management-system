@@ -9,7 +9,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Reaffic Signs <small></small></h3>
+                <h3>Message Details <small></small></h3>
               </div>
 
               <div class="title_right">
@@ -24,7 +24,7 @@
               </div>
             </div>
 
-           <div class="clearfix"></div>
+            <div class="clearfix"></div>
             @include('partials.admin.alert')
 
             <div class="row">
@@ -32,7 +32,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Traffic<small>Signs</small></h2>
+                    <h2>Created<small>Emblems</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -44,33 +44,42 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                    Traffic Signs and their associated description 
+                     These emblems, are ready for purchase
                     </p>
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                         
-                          <th>#Sign Name</th>
-                          <th>Description</th>
-                          <th>Picture</th>
-                          <th>Delete</th>
                           
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>Amount</th>
+                          <th>Valid From</th>
+                          <th>Valid To</th>
+                          
+                          <th>Buyers</th>
+                          <th>Delete</th>
+
+                         
                         </tr>
                       </thead>
 
-
                       <tbody>
-                        @foreach($signs as $sign)     
+                       @foreach($emblems as $emblem)     
                         <tr>
+                          <td>
+                            {{$emblem->name}}
+                            <br/>
+                            <small>Created  {{ Carbon\Carbon::parse($emblem->created_at)->diffForHumans() }}</small>
+                             
+                          </td>
+                          <td> {{$emblem->description}}</td>
+                          <td> {{$emblem->amount}}</td>
+                          <td> {{$emblem->valid_from}}</td>
+                          <td> {{$emblem->valid_to}}</td>
+                          <td> <a href="/admin_view_purchases/{{$emblem->id}}" title="View users who purchased this emblem" class="btn btn-success btn-flat btn-sm"><i class="fa fa-eye"></i> View Buyers</a></td>
+                           
+                          <td> <a href="/admin_manage_emblem/{{$emblem->id}}" title="This action cannot be reversed" class="btn btn-danger btn-flat btn-sm"><i class="fa fa-trash"></i> Delete</a></td>
                           
-                          <td>{{$sign->sign_name}}</td>
-                          <td>{{$sign->sign_description}}</td>
-                          <td><img src="storage/{{$sign->sign_picture}}" width="200px" height="200px" alt="" ></td>
-                          
-                         
-
-                          <td> <a href="/admin_manage_signs/{{$sign->id}}" title="This action cannot be reversed" class="btn btn-danger btn-flat btn-sm"><i class="fa fa-legal"></i> Delete</a></td>
-                        
                         </tr>
                         @endforeach
                         

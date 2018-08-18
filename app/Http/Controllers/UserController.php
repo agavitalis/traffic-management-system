@@ -75,16 +75,16 @@ class UserController extends Controller
 
     public function edit_profile(Request $request)
     {
+        
         if($request->isMethod('GET'))
         { 
-            return view('admin.edit_profile',compact(''));
+            return view('user.edit_profile',compact(''));
         }
         elseif($request->isMethod('POST'))
         {
              //validate this input
             $validatedData = $request->validate([
-                'first_name'=>'required',
-                'last_name'=>'required',
+                'username'=>'required',
                 'email'=>'required'
             ]);
             //update organization details

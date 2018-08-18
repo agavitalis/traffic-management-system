@@ -34,6 +34,14 @@
                         <li><a href="/admin_manage_offenders">Manage Offenders</a></li>  
                     </ul>
                   </li>
+                   <li><a><i class="fa fa-file-word-o"></i>Emblems<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/admin_new_emblem">Creat a new emblem</a></li>
+                        <li><a href="/admin_manage_emblem">Manage emblem</a></li>
+                        <li><a href="/admin_view_purchases">View buyers</a></li>  
+
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-euro"></i>Payments<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="/admin_manage_payments">View all Payments</a></li>

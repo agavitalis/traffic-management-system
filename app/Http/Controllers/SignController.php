@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Model\Sign;
+use Illuminate\Support\Facades\Storage;
 
 class SignController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
      public function new_sign(Request $request){
         
         if($request->isMethod('GET')){
@@ -59,43 +64,24 @@ class SignController extends Controller
     }
 
 
-    public function manage_rules( $id = null){
+    public function manage_signs( $id = null){
         if($id == null){
             $signs  =   DB::table('signs')->get();    
             return view('admin.manage_signs',compact('signs'));
         }
         else{
-             //delete a rule
+            //get that particular sign
+            $sign = Sign::find($id);
+            //delete sign picture from storge
+            Storage::delete($sign->sign_picture);
+            //delete drom db
+            $sign->delete();
 
-            Rule::find($id)->delete();
-            return back()->with('success','Rule deleted, successfully');
+            return back()->with('success','Traffic sign deleted, successfully');
 
         }
     }    
-    //  elseif($request->isMethod('POST')){
-
-    //       // 'profile_pic'->'image|nullable|max:1999';
-    //       if ($request->hasFile('profile_pic')){
-    //         //get the filename with the extension
-    //         $filenamewithExt=$request->file('profile_pic')->getClientOriginalName();
-    //         //get just the $filename
-    //         $filename=pathinfo($filenamewithExt,PATHINFO_FILENAME);
-    //         $extension=$request->file('profile_pic')->getClientOriginalExtension();
-    //         //the file to store
-    //         $filenameTostore=$filename.'_'.time().$extension;
-    //         //upload the image
-    //         $path=$request->file('profile_pic')->STOREAS('public/profile_images',$filenameTostore);
-    //       }
-    //       else{
-    //         $filenameTostore='user1-128x128.jpg';
-    //       }
-    //         $lecturer = Lecturer::find(Auth::user()->username);
-
-    //         $lecturer->profile_pic=$filenameTostore;
-    //         $lecturer->update();
-
-    //         return back()->with('success','Profile Picture Successfully Updated');
-    //     }
+    
 
 
 }

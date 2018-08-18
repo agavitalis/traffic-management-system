@@ -8,6 +8,10 @@ use App\Model\Rule;
 
 class RulesController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
    
     public function new_rule(Request $request){
         

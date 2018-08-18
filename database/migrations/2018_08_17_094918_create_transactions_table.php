@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOffendersTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,19 @@ class CreateOffendersTable extends Migration
      */
     public function up()
     {
-        Schema::create('offenders', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('offender');
+             $table->string('username');
+            $table->string('transaction_id');
+            $table->string('amount');
+
+            $table->string('emblem_id');
+            $table->string('emblem_name');
             $table->string('vehicle_id');
-            $table->string('offence');
-            $table->string('description');
-            $table->string('penalty');
-            $table->string('penalty_description');
-            $table->string('status')->default("Unresolved");
+            $table->string('transaction_type');           
             
+            $table->string('transaction_status');
+
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ class CreateOffendersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offenders');
+        Schema::dropIfExists('transactions');
     }
 }

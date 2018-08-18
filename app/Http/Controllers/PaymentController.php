@@ -14,6 +14,11 @@ Use App\Model\Offender;
 
 class PaymentController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //function to generate random string
     public function generateRandomString($length = 8) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -83,11 +88,7 @@ class PaymentController extends Controller
 
    
 
-    public function print_receipts(){
-          $transactions  =   DB::table('transactions')->where('username',Auth::user()->username)->get();
-        return view('user.print_receipts',compact('transactions'));
-    }
-
+   
      
     
   

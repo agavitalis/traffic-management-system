@@ -47,8 +47,15 @@
        
                     </div>
                      <div>
-                        <input type="text" class="form-control" name="v_type"  value = "{{ old('v_type') }}" placeholder="Vehicle Type (Eg Truck)" required autofocus>
-       
+                       
+                        <select class="form-control" name="v_type"  placeholder="Vehicle Type (Eg Truck)" required>
+                            <option selected="true" disabled>Vehicle Type</option>
+                            <option value="Big Truck">Big Truck</option>
+                            <option value="Small Truck">Small Truck</option>
+                            <option value="Lorry">Lorry</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Car">Car</option>
+                        </select>
                     </div>
                     <div>
                         <input  type="text" class="form-control" name="v_brand"  value = "{{ old('v_brand') }}" placeholder="Vehicle Brand(Toyota 420) " required autofocus>

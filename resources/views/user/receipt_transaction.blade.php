@@ -33,7 +33,7 @@
               <div class="col-md-8 col-md-offset-2">
                 <div class="x_panel">
                   <div class="x_title r-title" >
-                    <h2>Payment Receipt <small> from Traffic Safety</small></h2>
+                    <h2>Emblem Receipt <small> from Traffic Safety</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -64,6 +64,7 @@
                                 <strong>Traffic Safety, Corp.</strong>
                                 <br>Phone:+234 81 639 22749
                                 <br>Email: info@trafficsafety.com
+                                <br> <strong>##EMBLEM RECEIPT</strong>
                             </address>
                         </div>
                         <!-- /.col -->
@@ -72,14 +73,14 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
-                          <b>Receipt #{{$payment->transaction_id}}</b>
+                          <b>Receipt #{{$transaction->transaction_id}}</b>
                           <br>
                           <br>
-                          <b>Trans ID:</b> {{$payment->transaction_id}}
+                          <b>Trans ID:</b> {{$transaction->transaction_id}}
                           <br>
-                          <b>Payment date:</b> {{$payment->created_at}}
+                          <b>Date:</b> {{$transaction->created_at}}
                           <br>
-                          <b>Offence No:</b> {{$payment->payment_for}}
+                          <b>Emblem:</b> {{$transaction->emblem_name}}
                         </div>
                         <!-- /.col -->
                       </div>
@@ -93,7 +94,7 @@
                               <tr>
                                 <th>Payment From</th>
                                 <th>For</th>  
-                                <th style="width: 50%">Payment Summary</th>
+                                <th>Vehicle No</th>
                                 <th>Amount</th>
                                 <th>Type</th>
                                 <th>Status</th>
@@ -102,11 +103,11 @@
                             <tbody>
                               <tr>
                                 <td>{{Auth::user()->first_name}} {{Auth::user()->last_name}}</td>
-                                <td>{{$payment->payment_for}}</td>
-                                <td>{{$payment->transaction_details}}</td>
-                                <td>{{$payment->amount}}</td>
-                                <td>{{$payment->transaction_type}}</td>
-                                <td>{{$payment->transaction_status}}</td>
+                                <td>{{$transaction->emblem_name}}</td>
+                                <td>{{$transaction->vehicle_id}}</td>
+                                <td>{{$transaction->amount}}</td>
+                                <td>{{$transaction->transaction_type}}</td>
+                                <td>{{$transaction->transaction_status}}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -124,7 +125,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-6">
-                          <p class="lead">Paid on: {{$payment->created_at}}</p>
+                          <p class="lead">Paid on: {{$transaction->created_at}}</p>
                           <div class="table-responsive">
                             <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
                             ...Your safety is our concern:Drive with caution

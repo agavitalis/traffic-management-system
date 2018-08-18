@@ -25,8 +25,20 @@
                        
                     </ul>
                   </li>
-                  <li><a href="/get_receipt"><i class="fa fa-file"></i>Recipts</a></li>
-              
+                  <li><a><i class="fa fa-file-word-o"></i>Emblems<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/buy_emblems">Buy Emblems</a></li>
+                       
+                    </ul>
+                  </li>
+                   <li><a><i class="fa fa-file"></i>Recipts<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/get_receipt">Recipts for Offences</a></li>
+                        <li><a href="/emblem_receipt">Recipts for Emblems</a></li>
+                       
+                    </ul>
+                  </li>
+                 
                   <li><a><i class="fa fa-user"></i>Profile <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/profile">View Profile</a></li>
