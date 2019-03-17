@@ -8,7 +8,7 @@ class GeneralController extends Controller
 {
     public function index(Request $request){    
         //display the view              
-        return view('welcome',compact(''));
+        return view('welcome');
     }
         
     public function rules(Request $request){
