@@ -53,7 +53,7 @@ class OffendersController extends Controller
 
                 ////sms shit goes here
                 $json_url = "http://api.ebulksms.com:8080/sendsms.json";
-                $xml_url = "http://api.ebulksms.com:8080/sendsms.xml";
+               // $xml_url = "http://api.ebulksms.com:8080/sendsms.xml";
                
                 $username ='vivvaa.vivvaa@gmail.com';
                 $apikey = 'baeb2dfbf4cc3335afea1a93ccd8f729750bd1c4';

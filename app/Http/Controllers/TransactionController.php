@@ -30,6 +30,9 @@ class TransactionController extends Controller
             foreach($vehicles as $vehicle){       
                 //select the individual emblems for the vehicles
                 $emblems  =   DB::table('emblems')->where(['vehicle_type'=>$vehicle->vehicle_type])->first(); 
+                if($emblems == null){
+                    return back()->with('error','Opps, no emblems created for your vehicle type');
+                }
             // dd($emblems);
                 $his_vehicle =   array (
                                         'vehicle' => $vehicle->vehicle,

@@ -66,13 +66,13 @@
                             <tbody>
                                 @foreach($vehicles as $vehicle)     
                                 <tr>
-                                <td>{{$vehicle->vehicle_id}}</td>
+                                <td>{{$vehicle->vehicle}}</td>
                                  <td>{{$vehicle->vehicle_name}}</td>
                                 <td>{{$vehicle->vehicle_type}}</td>
                                 <td>{{$vehicle->vehicle_color}}</td>
                                 <td>{{$vehicle->vehicle_brand}}</td>
                                 <td>{{$vehicle->engine_number}}</td>
-                                <td>{{$vehicle->chassis_nuber}}</td>
+                                <td>{{$vehicle->chassis_number}}</td>
                                 <td>{{$vehicle->remarks}}</td>
                                 <td>{{$vehicle->registered_by}}</td>
                                

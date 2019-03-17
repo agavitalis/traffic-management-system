@@ -228,7 +228,7 @@
                 else
                 {
                      $('.p_message').addClass('hidden');
-                     //generate a random rransaction id
+                     //generate a random transaction id
                      function makeid() {
                         var text = "";
                         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -281,8 +281,7 @@
                                             'offence_id':$('#p_id').val(),
                                             'offence':$('#offence').val(),
                                             'summary':$('#p_summary').val()
-                                        },
-                                        dataType:'JSON',
+                                        },                                        dataType:'JSON',
                                         success:function(data){
                                             x.close(); // use this to close the modal immediately after payment.
 
